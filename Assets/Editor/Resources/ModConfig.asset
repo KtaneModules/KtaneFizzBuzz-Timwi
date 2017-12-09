@@ -13,5 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FizzBuzzMod
   title: FizzBuzz
-  version: 1.3
+  description: 'A classic schoolyard game, with a twist...
+
+
+    Designed and implemented by ZekNikZ.
+
+
+    Module ID: fizzBuzzModule
+
+
+    Manuals
+
+    HTML: https://ktane.timwi.de/HTML/FizzBuzz.html
+
+    PDF: https://ktane.timwi.de/PDF/FizzBuzz.pdf'
+  version: 2.0.1
   outputFolder: build
+  previewImage: {fileID: 2800000, guid: 152237463959b63458bd13abf0b53b2b, type: 3}

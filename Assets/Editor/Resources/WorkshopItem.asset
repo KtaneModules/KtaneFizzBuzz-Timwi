@@ -13,13 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkshopPublishedFileID: 923342815
   Title: FizzBuzz
-  Description: 'A classic schoolyard game, with a twist...
-
-
-    Module ID is [fizzBuzzModule].
-
-
-    Created by ZekNikZ'
-  PreviewImage: {fileID: 2800000, guid: 152237463959b63458bd13abf0b53b2b, type: 3}
   Tags:
   - Regular Module
