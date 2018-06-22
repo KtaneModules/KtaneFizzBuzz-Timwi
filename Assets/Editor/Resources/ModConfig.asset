@@ -27,6 +27,6 @@ MonoBehaviour:
     HTML: https://ktane.timwi.de/HTML/FizzBuzz.html
 
     PDF: https://ktane.timwi.de/PDF/FizzBuzz.pdf'
-  version: 2.1.1
+  version: 2.2
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 554d5390af9f6f0449ab55941d3b7385, type: 3}
