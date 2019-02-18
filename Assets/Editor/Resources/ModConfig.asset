@@ -11,12 +11,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: FizzBuzzMod
+  id: FizzBuzz
   title: FizzBuzz
-  description: 'A classic schoolyard game, with a twist...
+  description: '[b]This is a re-upload with additions and fixes. Please unsubscribe
+    from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=923342815]the
+    old version[/url].[/b]
 
 
-    Designed and implemented by ZekNikZ.
+    A classic schoolyard game, with a twist...
+
+
+    Designed and implemented by ZekNikZ. Maintained by Timwi.
 
 
     Module ID: fizzBuzzModule
@@ -27,6 +32,6 @@ MonoBehaviour:
     HTML: https://ktane.timwi.de/HTML/FizzBuzz.html
 
     PDF: https://ktane.timwi.de/PDF/FizzBuzz.pdf'
-  version: 3.0
+  version: 3.1
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 554d5390af9f6f0449ab55941d3b7385, type: 3}
