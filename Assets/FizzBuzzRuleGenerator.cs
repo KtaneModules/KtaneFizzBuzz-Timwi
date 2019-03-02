@@ -93,14 +93,14 @@ public class FizzBuzzRuleGenerator
         ruleSet2.Add(new FizzBuzzRule
         {
             Id = "SerialAndParallelPortPresent",
-            RuleText = "At least one Serial <u>and</u> Parallel port are present on the bomb.",
+            RuleText = "At least one Serial and Parallel port are present on the bomb.",
             CheckRule = info => info.IsPortPresent(Port.Serial) && info.IsPortPresent(Port.Parallel)
         });
         ruleSet2.Add(new FizzBuzzRule
         {
             Id = "ThreeLettersAndThreeDigitsInSerialNumber",
             RuleText = "3 letters and 3 digits are present in the serial number.",
-            CheckRule = info => Enumerable.Count(info.GetSerialNumberLetters()) > 3 && Enumerable.Count(info.GetSerialNumberNumbers()) > 3
+            CheckRule = info => Enumerable.Count(info.GetSerialNumberLetters()) >= 3 && Enumerable.Count(info.GetSerialNumberNumbers()) >= 3
         });
         ruleSet2.Add(new FizzBuzzRule
         {
@@ -121,19 +121,19 @@ public class FizzBuzzRuleGenerator
             Id = "AtLeastXBatteryHoldersPresent",
             RuleText = "{0} or more battery holders are present on the bomb.",
             GenRule = rnd => new object[] { rnd.Next(2, 4) },
-            CheckRuleWithConfigs = (info, configs) => info.GetBatteryHolderCount() > (int) configs[0]
+            CheckRuleWithConfigs = (info, configs) => info.GetBatteryHolderCount() >= (int) configs[0]
         });
         ruleSet3.Add(new FizzBuzzRule
         {
             Id = "AtLeastXBatteriesPresent",
             RuleText = "{0} or more batteries are present on the bomb.",
             GenRule = rnd => new object[] { rnd.Next(4, 6) },
-            CheckRuleWithConfigs = (info, configs) => info.GetBatteryCount() > (int) configs[0]
+            CheckRuleWithConfigs = (info, configs) => info.GetBatteryCount() >= (int) configs[0]
         });
         ruleSet3.Add(new FizzBuzzRule
         {
             Id = "XAndYPortsPresent",
-            RuleText = "At least one {2} <u>and</u> {3} port are present on the bomb.",
+            RuleText = "At least one {2} and {3} port are present on the bomb.",
             GenRule = rnd =>
             {
                 int port1Index = rnd.Next(0, 4);
