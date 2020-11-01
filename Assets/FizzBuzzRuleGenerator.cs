@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using KModkit;
 
@@ -86,7 +87,7 @@ public class FizzBuzzRuleGenerator
         {
             Id = "MoreThanTwoThirdsModulesSolved",
             RuleText = "More than two thirds of the modules present on the bomb have been solved.",
-            CheckRule = info => info.GetSolvedModuleNames().Count > module.startingTime * 2f / 3
+            CheckRule = info => info.GetSolvedModuleIDs().Count > info.GetSolvableModuleIDs().Count * 2f / 3
         });
 
         // Rule Set 2
