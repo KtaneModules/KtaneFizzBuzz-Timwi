@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FizzBuzz
   title: FizzBuzz
+  author: ZekNikZ
   description: '[b]This is a re-upload with additions and fixes. Please unsubscribe
     from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=923342815]the
     old version[/url].[/b]
@@ -32,6 +33,6 @@ MonoBehaviour:
     HTML: https://ktane.timwi.de/HTML/FizzBuzz.html
 
     PDF: https://ktane.timwi.de/PDF/FizzBuzz.pdf'
-  version: 3.1
+  version: 3.2
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 554d5390af9f6f0449ab55941d3b7385, type: 3}

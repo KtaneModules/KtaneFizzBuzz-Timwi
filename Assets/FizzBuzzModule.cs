@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 using Rnd = UnityEngine.Random;
@@ -15,6 +16,7 @@ public class FizzBuzzModule : MonoBehaviour
     public KMSelectable SubmitButton;
     public TextMesh[] Labels;
     public KMRuleSeedable RuleSeedModifier;
+    public KMColorblindMode ColorblindMode;
 
     public readonly int[] Colors = new int[3];
     private readonly int[] ButtonStates = new int[3];
@@ -43,6 +45,7 @@ public class FizzBuzzModule : MonoBehaviour
     private List<FizzBuzzRule> ruleSet;
     private int[] divisibilityRules;
     private bool isSolved;
+    private bool colorblindMode;
 
     public float startingTime;
     public int startingModuleCount;
@@ -75,15 +78,13 @@ public class FizzBuzzModule : MonoBehaviour
         }
 
         SubmitButton.OnInteract += delegate { Submit(); return false; };
+        colorblindMode = ColorblindMode.ColorblindModeActive;
     }
 
     void OnActivate()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            Labels[i].text = MakeString(i);
-        }
         FindSolutions();
+        UpdateDisplays();
     }
 
     void HandlePress(int buttonNum)
@@ -94,46 +95,38 @@ public class FizzBuzzModule : MonoBehaviour
         if (isSolved)
             return;
 
-        int state = (ButtonStates[buttonNum] + 1) % 4;
-        ButtonStates[buttonNum] = state;
-
-        switch (state)
-        {
-            case 0:
-                Labels[buttonNum].text = MakeString(buttonNum);
-                break;
-            case 1:
-                Labels[buttonNum].text = "Fizz";
-                break;
-            case 2:
-                Labels[buttonNum].text = "Buzz";
-                break;
-            case 3:
-                Labels[buttonNum].text = "FizzBuzz";
-                break;
-        }
-
+        ButtonStates[buttonNum] = (ButtonStates[buttonNum] + 1) % 4;
+        UpdateDisplays();
         return;
+    }
+
+    private void UpdateDisplays()
+    {
+        for (var pos = 0; pos < 3; pos++)
+        {
+            string result = colorblindMode ? "RGBYW".Substring(Colors[pos], 1) + " " : "";
+            switch (ButtonStates[pos])
+            {
+                case 0: result += MakeString(pos); break;
+                case 1: result += "Fizz"; break;
+                case 2: result += "Buzz"; break;
+                case 3: result += "FizzBuzz"; break;
+            }
+            Labels[pos].text = result;
+        }
     }
 
     int[] GenNum()
     {
         int[] result = new int[7];
         for (int i = 0; i < 7; i++)
-        {
             result[i] = Rnd.Range(0, 10);
-        }
         return result;
     }
 
     string MakeString(int button)
     {
-        string result = "";
-        for (int i = 0; i < 7; i++)
-        {
-            result += "" + Nums[button][i];
-        }
-        return result;
+        return Nums[button].Join("");
     }
 
     void FindSolutions()
@@ -248,12 +241,18 @@ public class FizzBuzzModule : MonoBehaviour
     }
 
     [NonSerialized]
-    public string TwitchHelpMessage = "Press a button with !{0} press top (also t, 1, etc.). Press multiple buttons with !{0} press top middle bottom bottom. Submit with !{0} press submit. Submit particular answers with !{0} submit fizz number fizzbuzz";
+    public string TwitchHelpMessage = "!{0} press top middle bottom bottom | !{0} submit | !{0} submit fizz number fizzbuzz | !{0} colorblind";
 
     KMSelectable[] ProcessTwitchCommand(string command)
     {
+        if (Regex.IsMatch(command, @"^\s*(cb|colorblind)\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            colorblindMode = true;
+            UpdateDisplays();
+            return new KMSelectable[0];
+        }
         command = command.Trim().ToLowerInvariant();
-        var pieces = command.Split(new[] { ' ', ',' }, System.StringSplitOptions.RemoveEmptyEntries);
+        var pieces = command.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
         var list = new List<KMSelectable>();
         if (pieces[0] == "submit" && pieces.Length == 4)
@@ -347,10 +346,7 @@ public class FizzBuzzModule : MonoBehaviour
             }
         }
         else
-        {
             return null;
-
-        }
 
         return list.ToArray();
     }

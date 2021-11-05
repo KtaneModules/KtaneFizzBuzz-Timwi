@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114000013216146618}
   - component: {fileID: 114000011047321648}
   - component: {fileID: 114856016491900342}
+  - component: {fileID: 114900511295712674}
   m_Layer: 0
   m_Name: FizzBuzzModule
   m_TagString: Untagged
@@ -210,24 +211,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000011906708568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4000010000742252}
-  - component: {fileID: 23000014181495818}
-  - component: {fileID: 102000011957251536}
-  - component: {fileID: 114000013169880898}
-  m_Layer: 0
-  m_Name: BetaLabel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1000012068992972
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,19 +400,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010000742252
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011906708568}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0691, y: 0.0149, z: 0.0623}
-  m_LocalScale: {x: 0.0025, y: 0.0025000009, z: 0.020000007}
-  m_Children: []
-  m_Father: {fileID: 4000010908784376}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4000010107808294
 Transform:
   m_ObjectHideFlags: 1
@@ -438,7 +408,7 @@ Transform:
   m_GameObject: {fileID: 1000011661091658}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0.51000005, z: 0}
-  m_LocalScale: {x: 0.020833332, y: 0.08333333, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.08333333, z: 1}
   m_Children: []
   m_Father: {fileID: 4000012821720290}
   m_RootOrder: 0
@@ -464,7 +434,7 @@ Transform:
   m_GameObject: {fileID: 1000010298552718}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0.51000005, z: 0}
-  m_LocalScale: {x: 0.020833332, y: 0.08333333, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.08333333, z: 1}
   m_Children: []
   m_Father: {fileID: 4000013711667254}
   m_RootOrder: 0
@@ -477,7 +447,7 @@ Transform:
   m_GameObject: {fileID: 1000011119539964}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0.51000005, z: 0}
-  m_LocalScale: {x: 0.020833332, y: 0.0833333, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.0833333, z: 1}
   m_Children: []
   m_Father: {fileID: 4000011186339386}
   m_RootOrder: 0
@@ -512,7 +482,6 @@ Transform:
   - {fileID: 4000013091731518}
   - {fileID: 4000012077773232}
   - {fileID: 4000013760416744}
-  - {fileID: 4000010000742252}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1146,40 +1115,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23000014181495818
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011906708568}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &33000010307264680
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1309,27 +1244,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278255615
---- !u!102 &102000011957251536
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011906708568}
-  m_Text: 
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 0
-  m_Anchor: 4
-  m_Alignment: 1
-  m_TabSize: 4
-  m_FontSize: 65
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190335
 --- !u!102 &102000012428257890
 TextMesh:
   serializedVersion: 3
@@ -1518,6 +1432,7 @@ MonoBehaviour:
   - {fileID: 102000011290300540}
   - {fileID: 102000013746070490}
   RuleSeedModifier: {fileID: 114856016491900342}
+  ColorblindMode: {fileID: 114900511295712674}
   startingTime: 0
   startingModuleCount: 0
 --- !u!114 &114000011185809202
@@ -1744,19 +1659,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/Diffuse
---- !u!114 &114000013169880898
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011906708568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShaderNames:
-  - GUI/KT 3D Text
 --- !u!114 &114000013212114736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1825,4 +1727,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf69c2de51bd3c43bbd9bc22578ee08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seed: 86
+  _seed: 1
+--- !u!114 &114900511295712674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010097391934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cfb889a07d5fd4e9baed7960bb397f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorblindMode: 0
