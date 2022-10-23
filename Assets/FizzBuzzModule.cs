@@ -243,13 +243,13 @@ public class FizzBuzzModule : MonoBehaviour
     [NonSerialized]
     public string TwitchHelpMessage = "!{0} press top middle bottom bottom | !{0} submit | !{0} submit fizz number fizzbuzz | !{0} colorblind";
 
-    KMSelectable[] ProcessTwitchCommand(string command)
+    IEnumerable<KMSelectable> ProcessTwitchCommand(string command)
     {
         if (Regex.IsMatch(command, @"^\s*(cb|colorblind)\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
-            colorblindMode = true;
+            colorblindMode = !colorblindMode;
             UpdateDisplays();
-            return new KMSelectable[0];
+            return Enumerable.Empty<KMSelectable>();
         }
         command = command.Trim().ToLowerInvariant();
         var pieces = command.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -289,6 +289,8 @@ public class FizzBuzzModule : MonoBehaviour
             }
             list.Add(SubmitButton);
         }
+        else if (pieces[0] == "submit" && pieces.Length == 1)
+            list.Add(SubmitButton);
         else if (pieces[0] == "press" && pieces.Length >= 2)
         {
             for (int i = 1; i < pieces.Length; i++)
@@ -348,7 +350,7 @@ public class FizzBuzzModule : MonoBehaviour
         else
             return null;
 
-        return list.ToArray();
+        return list;
     }
 
     void ChangeButtonState(List<KMSelectable> list, int button, int value)
